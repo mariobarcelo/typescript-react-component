@@ -106,21 +106,22 @@ const WithTitleAndPillActionsTextArea = ({ handleCreateComment }: WithTitleAndPi
         </div>
   
         <div className="absolute bottom-0 inset-x-px">
-          <div className="border-t border-gray-200 px-2 py-2 flex justify-between items-center space-x-3 sm:px-3">
+          <div className="border-t border-gray-200 px-4 sm:px-3 py-4 sm:py-2 flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-2 ">
             <div className="flex">
               <button
                 type="button"
                 className="-ml-2 -my-2 rounded-full px-3 py-2 inline-flex items-center text-left text-gray-400 group"
               >
                 <PaperClipIcon className="-ml-1 h-5 w-5 mr-2 group-hover:text-gray-500" aria-hidden="true" />
-                <span className="text-sm text-gray-500 group-hover:text-gray-600 italic">Attach a file</span>
+                <span className="text-sm text-gray-500 group-hover:text-gray-600 italic">Attach a file or Image</span>
               </button>
             </div>
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 w-full sm:w-auto">
               <button
                 type="submit"
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                className="inline-flex items-center px-4 py-2 w-full border justify-center border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                 disabled={isDisabled}
+               
               >
                 {submitButtonText}
               </button>
