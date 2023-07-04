@@ -25,17 +25,16 @@ const CommentForm = () => {
   const user = createUser();
   const userImage = createUserImage();
 
-  const [posts, setPosts] = React.useState([]);
+  const [comments, setComments] = React.useState([]);
   
   function handleCreatePosts(title: string, description: string) {
-    const nextPost = {
+    const nextComment = {
       id: uuidv4(),
       title,
       description
     }
-    console.log({ nextPost })
-    setPosts([...posts, nextPost])
-    return nextPost;
+    setComments([...comments, nextComment])
+    return nextComment;
   }
 
   return (
