@@ -18,7 +18,7 @@ const CommentForm = ({ handleCreateComment, user, userImage }) => {
 
   return (
     <div className="bg-white px-4 py-6 sm:px-6 rounded-t-md shadow-md">
-      <div className="flex space-x-3">
+      <div className="flex flex-col gap-3 sm:gap-0 sm:flex-row sm:space-x-3">
           <div className="flex-shrink-0">
               <Avatar src={userImage} alt={`Avatar of ${user.fullName}`} /> 
           </div>
