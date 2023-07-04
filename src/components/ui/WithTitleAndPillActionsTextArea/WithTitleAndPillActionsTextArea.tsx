@@ -21,6 +21,7 @@ const WithTitleAndPillActionsTextArea = ({ handleCreateComment }: WithTitleAndPi
     const [description, setDescription] = React.useState('')
     const [submitButtonText, setSubmitButtonText] = React.useState(buttonStates.idle)
     const [isDisabled, setIsDisabled] = React.useState(false);
+    const titleInputRef = React.useRef(null);
 
     function setTimeoutAsync(ms: number): Promise<void> {
       return new Promise<void>((resolve) => {
@@ -46,6 +47,7 @@ const WithTitleAndPillActionsTextArea = ({ handleCreateComment }: WithTitleAndPi
       setSubmitButtonText(buttonStates.idle)
 
       setIsDisabled(false);
+      titleInputRef.current.focus();
     }
 
 
@@ -66,6 +68,7 @@ const WithTitleAndPillActionsTextArea = ({ handleCreateComment }: WithTitleAndPi
             placeholder="Title"
             required
             aria-label='This is the title for the post'
+            ref={titleInputRef}
             value={title}
             onChange={(event) => {
               setTitle(event.target.value)

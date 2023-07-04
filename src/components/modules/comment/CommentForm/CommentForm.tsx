@@ -6,8 +6,6 @@
  * Copyright ©2023, Applus+ Laboratories
  */
 
-import React from 'react';
-
 // Components
 // Todo: Add Avatar component
 import Avatar from '../../../ui/Avatar/Avatar';
