@@ -1,5 +1,6 @@
 import { JSX } from 'react'
 import applusLogo from '@/assets/applus-laboratories-logo.png'
+import { CommentForm } from '../modules/comment/CommentForm'
 
 // Styles
 import '@/styles/App.css'
@@ -7,7 +8,7 @@ import '@/styles/App.css'
 const App = () : JSX.Element => {
   return (
     <>
-      <div>
+      {/* <div>
         <a href="https://appluslaboratories.com" target="_blank">
           <img src={applusLogo} className="h-96" alt="Applus+ Laboratories Logo" />
         </a>
@@ -17,7 +18,8 @@ const App = () : JSX.Element => {
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
-      </div>
+      </div> */}
+      <CommentForm />
     </>
   )
 }

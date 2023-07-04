@@ -5,4 +5,5 @@ export interface UserObjectInterface {
     createdUserId: string,
     createdDate: Date,
     lastUpdateDate: Date,
+    fullName: string
 }

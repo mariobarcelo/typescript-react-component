@@ -23,6 +23,7 @@ export const createUser = (): UserObjectInterface => {
     const createdUserId = faker.string.uuid()
     const createdDate = faker.date.past()
     const lastUpdateDate = faker.date.recent()
+    const fullName = faker.person.fullName()
 
     return {
         id,
@@ -31,6 +32,7 @@ export const createUser = (): UserObjectInterface => {
         createdUserId,
         createdDate,
         lastUpdateDate,
+        fullName,
     }
 }
 
