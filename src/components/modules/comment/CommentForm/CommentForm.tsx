@@ -26,8 +26,7 @@ const CommentForm = () => {
   const userImage = createUserImage();
 
   const [posts, setPosts] = React.useState([]);
-  const [isDisabled, setIsDisabled] = React.useState(false);
-
+  
   function handleCreatePosts(title: string, description: string) {
     const nextPost = {
       id: uuidv4(),
@@ -46,7 +45,7 @@ const CommentForm = () => {
               <Avatar src={userImage} alt={`Avatar of ${user.fullName}`} /> 
           </div>
           <div className="min-w-0 flex-1">
-              <WithTitleAndPillActionsTextArea handleCreatePosts={handleCreatePosts} disabled={isDisabled}/>
+              <WithTitleAndPillActionsTextArea handleCreatePosts={handleCreatePosts}/>
           </div>
       </div>
     </div>
