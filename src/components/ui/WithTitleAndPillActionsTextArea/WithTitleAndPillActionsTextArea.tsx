@@ -10,7 +10,7 @@ import type {
     WithTitleAndPillActionsTextAreaComponentProps
 } from '@/types'
 
-const WithTitleAndPillActionsTextArea = ({ handleCreatePosts }: WithTitleAndPillActionsTextAreaComponentProps) => {
+const WithTitleAndPillActionsTextArea = ({ handleCreateComment }: WithTitleAndPillActionsTextAreaComponentProps) => {
 
     const buttonStates = {
       'idle': 'Create',
@@ -38,7 +38,7 @@ const WithTitleAndPillActionsTextArea = ({ handleCreatePosts }: WithTitleAndPill
       
       await setTimeoutAsync(2000);
       
-      handleCreatePosts(title, description)
+      handleCreateComment(title, description)
       
       setTitle('')
       setDescription('')

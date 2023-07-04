@@ -1,5 +1,7 @@
 import { Avatar } from '@/components/ui/Avatar';
 
+import { formatDistanceToNow } from 'date-fns'
+
 const CommentCard = ({ comment }) => {
   
   return (
@@ -9,7 +11,7 @@ const CommentCard = ({ comment }) => {
         </div>
         <div className="min-w-0 flex-1 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-x-3 gap-y-1">
           <p className='text-black text-left justify-self-start'>{comment.user.fullName}</p>
-          <span className='text-sm text-[#9197a1] justify-self-start self-center'>a day ago</span>
+          <span className='text-sm text-[#9197a1] justify-self-start self-center'>{`${formatDistanceToNow(comment.created)} ago`}</span>
           <p className='text-black text-left col-start-1 col-end-3 max-w-[75ch]'>{comment.description}</p>
         </div>
     </div>
