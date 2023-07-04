@@ -4,3 +4,11 @@
   margin: 0 auto;
   text-align: center;
 }
+
+::-moz-selection {
+  background: rgba(249, 116, 21, 0.643);
+}
+
+::selection {
+  background: rgba(249, 116, 21, 0.643);
+}
