@@ -6,11 +6,14 @@
  * Copyright ©2023, Applus+ Laboratories
  */
 
+import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 // Components
 // Todo: Add Avatar component
 import Avatar from '../../../ui/Avatar/Avatar';
 // Todo: Add WithTitleAndPillActionsTextArea component
+import WithTitleAndPillActionsTextArea from '../../../ui/WithTitleAndPillActionsTextArea/WithTitleAndPillActionsTextArea';
 
 // Faker
 import { createUserImage } from '@/factories/data/userFactory';
@@ -20,22 +23,30 @@ const CommentForm = () => {
   
   // Data
   const user = createUser();
-  console.log({user})
   const userImage = createUserImage();
-  console.log({userImage})
 
+  const [posts, setPosts] = React.useState([]);
+  const [isDisabled, setIsDisabled] = React.useState(false);
 
-  // TODO: Add uploading dynamic state
+  function handleCreatePosts(title: string, description: string) {
+    const nextPost = {
+      id: uuidv4(),
+      title,
+      description
+    }
+    console.log({ nextPost })
+    setPosts([...posts, nextPost])
+    return nextPost;
+  }
 
   return (
     <div className="bg-white px-4 py-6 sm:px-6">
       <div className="flex space-x-3">
           <div className="flex-shrink-0">
-             // TODO: Add Avatar component
               <Avatar src={userImage} alt={`Avatar of ${user.fullName}`} /> 
           </div>
           <div className="min-w-0 flex-1">
-              // Todo: Add WithTitleAndPillActionsTextArea component
+              <WithTitleAndPillActionsTextArea handleCreatePosts={handleCreatePosts} disabled={isDisabled}/>
           </div>
       </div>
     </div>

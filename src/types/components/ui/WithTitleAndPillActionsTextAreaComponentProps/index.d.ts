@@ -1,3 +1,3 @@
 export interface WithTitleAndPillActionsTextAreaComponentProps {
-    disabled: boolean;
+    handleCreatePosts: function;
 }
