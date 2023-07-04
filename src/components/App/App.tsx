@@ -1,25 +1,27 @@
 import { JSX } from 'react'
-import applusLogo from '@/assets/applus-laboratories-logo.png'
 import { CommentForm } from '../modules/comment/CommentForm'
+import React from 'react'
 
 // Styles
 import '@/styles/App.css'
+import { CommentList } from '../modules/comment/CommentList'
 
 const App = () : JSX.Element => {
+
+  const [comments, setComments] = React.useState([]);
+  console.log({comments})
+
+  function handleCreateComment(newComment: object) {
+    console.log({ newComment })
+    setComments([...comments, newComment])
+  }
+  
   return (
     <>
-      {/* <div>
-        <a href="https://appluslaboratories.com" target="_blank">
-          <img src={applusLogo} className="h-96" alt="Applus+ Laboratories Logo" />
-        </a>
+      <div className='max-w-[800px] my-0 mx-auto'>
+        <CommentForm handleCreateComment={ handleCreateComment } />
+        <CommentList comments={comments} />
       </div>
-      <h1>Applus React Assessments</h1>
-      <div className="card">
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div> */}
-      <CommentForm />
     </>
   )
 }

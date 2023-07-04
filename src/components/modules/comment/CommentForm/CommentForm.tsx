@@ -7,7 +7,6 @@
  */
 
 import React from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 // Components
 // Todo: Add Avatar component
@@ -19,21 +18,20 @@ import WithTitleAndPillActionsTextArea from '../../../ui/WithTitleAndPillActions
 import { createUserImage } from '@/factories/data/userFactory';
 import { createUser } from '@/factories/data/userFactory';
 
-const CommentForm = () => {
+const CommentForm = ({ handleCreateComment }) => {
   
   // Data
   const user = createUser();
   const userImage = createUserImage();
-
-  const [comments, setComments] = React.useState([]);
   
   function handleCreatePosts(title: string, description: string) {
     const nextComment = {
-      id: uuidv4(),
       title,
-      description
+      description,
+      user,
+      userImage,
     }
-    setComments([...comments, nextComment])
+    handleCreateComment(nextComment)
     return nextComment;
   }
 

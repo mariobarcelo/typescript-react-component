@@ -18,8 +18,7 @@
     "cssnano": "^5.1.14",
     "glob-parent": "^6.0.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "uuid": "^9.0.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.23",
